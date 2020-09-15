@@ -1,18 +1,17 @@
 import React from "react"
 import "./App.css"
-import { useStore } from "./useStore"
+// import { useStore } from "./hooks/store/useStore"
 
 import { History } from "./components/History"
-import { GameOver } from "./components/GameOver"
-import { Game } from "./components/Game"
+import { Game } from "./components/Game/Game"
 
 function App() {
-  const { gameStatus } = useStore()
+  // const { gameStatus } = useStore()
 
   return (
     <div className="App">
       <History />
-      {gameStatus === "pending" ? <Game /> : <GameOver />}
+      <Game />
     </div>
   )
 }
