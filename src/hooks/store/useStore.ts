@@ -2,7 +2,7 @@ import create, { StateCreator } from "zustand"
 import { LOCALSTORAGE_KEY } from "../../constants"
 import { State, Bet } from "./types"
 
-const ROUNDS = 3
+export const ROUNDS = 30
 
 const saveToLocalstorage = <T extends State>(
   config: StateCreator<T, (fn: (draft: T) => void) => void>
@@ -10,7 +10,6 @@ const saveToLocalstorage = <T extends State>(
   config(
     (args) => {
       set(args as (state: T) => T)
-
       try {
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(get()))
       } catch {
@@ -28,7 +27,6 @@ export const useStore = create<State>(
     bet: null,
     gameStatus: "start",
     history: [],
-    points: 0,
     round: 0,
     drawn: null,
     setDrawn: (drawn) =>
@@ -57,7 +55,7 @@ export const useStore = create<State>(
       set((state) => ({ bet, round: state.round += 1, gameStatus: "drawing" })),
     setError: () => set((state) => ({ ...state, gameStatus: "error" })),
     setDrawing: () => set((state) => ({ ...state, gameStatus: "drawing" })),
-    setContinue: (state: State) => set((state) => state),
+    setContinue: (state: State) => set(() => state),
   }))
 )
 
