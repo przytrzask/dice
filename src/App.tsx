@@ -9,11 +9,11 @@ import { Game } from "./components/Game/Game"
 
 import theme from "./theme"
 import { useStore, ROUNDS } from "./hooks/store/useStore"
-import { History, State } from "./hooks/store/types"
+import { State } from "./hooks/store/types"
 
 const calculateScore = (state: State) =>
   state.history.reduce(
-    // @ts-ignore
+    // @ts-ignore fix me
     (acc, { points }) => (parseFloat(acc) + parseFloat(points)).toFixed(2),
     0
   )

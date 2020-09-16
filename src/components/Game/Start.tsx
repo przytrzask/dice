@@ -31,6 +31,7 @@ export function Start() {
       <footer
         sx={{
           width: "100%",
+          height: 90,
         }}
       >
         {canContinue(state) && (
