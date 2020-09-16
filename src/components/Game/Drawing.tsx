@@ -15,7 +15,7 @@ export function Drawing() {
   const [count, setCount] = React.useState(getRandomInt(1, 6))
   useInterval(() => {
     setCount(getRandomInt(1, 6))
-  }, 300)
+  }, 100)
   return (
     <React.Fragment>
       <main

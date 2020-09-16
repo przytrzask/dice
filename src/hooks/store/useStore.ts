@@ -2,7 +2,7 @@ import create, { StateCreator } from "zustand"
 import { LOCALSTORAGE_KEY } from "../../constants"
 import { State, Bet } from "./types"
 
-const ROUNDS = 30
+export const ROUNDS = 30
 
 const saveToLocalstorage = <T extends State>(
   config: StateCreator<T, (fn: (draft: T) => void) => void>
@@ -27,7 +27,6 @@ export const useStore = create<State>(
     bet: null,
     gameStatus: "start",
     history: [],
-    points: 0,
     round: 0,
     drawn: null,
     setDrawn: (drawn) =>

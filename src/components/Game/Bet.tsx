@@ -23,7 +23,7 @@ export function BetComponent({ value }: Props) {
     rollTheDice()
   }
 
-  return isOver ? null : (
+  return (
     <React.Fragment>
       <main
         sx={{

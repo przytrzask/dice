@@ -12,7 +12,6 @@ export type State =
       gameStatus: "start"
       bet: null
       history: History[]
-      points: number
       round: number
       drawn: null
       setDrawn: (dice: DiceValue) => void
@@ -25,7 +24,6 @@ export type State =
       gameStatus: "drawing"
       bet: Bet | null
       history: History[]
-      points: number
       round: number
       drawn: DiceValue | null
       setDrawn: (dice: DiceValue) => void
@@ -38,7 +36,6 @@ export type State =
       gameStatus: "error"
       bet: Bet | null
       history: History[]
-      points: number
       round: number
       drawn: DiceValue | null
       setDrawn: (dice: DiceValue) => void
@@ -51,7 +48,6 @@ export type State =
       bet: Bet
       gameStatus: "bet"
       history: History[]
-      points: number
       round: number
       drawn: DiceValue
       setDrawn: (dice: DiceValue) => void
