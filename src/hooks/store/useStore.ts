@@ -10,7 +10,6 @@ const saveToLocalstorage = <T extends State>(
   config(
     (args) => {
       set(args as (state: T) => T)
-
       try {
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(get()))
       } catch {
@@ -57,7 +56,7 @@ export const useStore = create<State>(
       set((state) => ({ bet, round: state.round += 1, gameStatus: "drawing" })),
     setError: () => set((state) => ({ ...state, gameStatus: "error" })),
     setDrawing: () => set((state) => ({ ...state, gameStatus: "drawing" })),
-    setContinue: (state: State) => set((state) => state),
+    setContinue: (state: State) => set(() => state),
   }))
 )
 

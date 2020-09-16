@@ -5,5 +5,15 @@ import { useStore } from "../hooks/store/useStore"
 export function History() {
   const { history } = useStore()
 
-  return <div>{JSON.stringify(history, null, 2)}</div>
+  return (
+    <ul>
+      {history.map((result, index) => {
+        return (
+          <li>
+            Round:{index + 1} Result:{result.points}
+          </li>
+        )
+      })}
+    </ul>
+  )
 }

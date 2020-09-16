@@ -17,7 +17,7 @@ function App() {
             <History />
           </Flex>
           <Flex
-            // @todo add comment
+            // @todo fixme problem with flexDirection type
             style={{ flexDirection: "column" }}
             p={4}
             sx={styles.game}
@@ -40,7 +40,13 @@ function App() {
 
 const styles = {
   header: { flexDirection: "column", display: "flex" },
-  history: { p: 4 },
+
+  history: {
+    p: 4,
+    borderRadius: 30,
+    overflow: "auto",
+    justifyContent: "center",
+  },
 
   game: {
     p: 4,

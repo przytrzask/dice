@@ -45,15 +45,15 @@ export function BetComponent({ value }: Props) {
       >
         <button
           sx={{ variant: "button.secondary", mt: "auto" }}
-          onClick={() => bet("more")}
-        >
-          More
-        </button>
-        <button
-          sx={{ variant: "button.secondary", mt: "auto", ml: 2 }}
           onClick={() => bet("less")}
         >
           Less
+        </button>
+        <button
+          sx={{ variant: "button.primary", mt: "auto", ml: 2 }}
+          onClick={() => bet("more")}
+        >
+          More
         </button>
       </footer>
     </React.Fragment>

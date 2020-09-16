@@ -4,7 +4,7 @@ export type Bet = "less" | "more" | null
 export type History = {
   drawn: DiceValue
   bet: Bet
-  point: 0 | 0.1
+  points: 0 | 0.1
 }
 
 export type State =
