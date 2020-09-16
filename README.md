@@ -14,3 +14,7 @@
 - [x] Powrócenie do gry wyprzedzone jest pytaniem "Czy załadować poprzednią grę?"
 - [x] Jeśli gracz wybierze "TAK" to wczytujemy grę ze stanem jak przed zamknięciem
 - [x] Jeśli "NIE" rozpoczynamy nową grę
+
+### Tests
+
+- `yarn run/npm start test:e2e`
