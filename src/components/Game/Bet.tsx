@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-
 import React from "react"
+import Confetti from "react-confetti"
 
 import { isGameOver, useStore } from "../../hooks/store/useStore"
 import { Bet } from "../../hooks/store/types"
@@ -35,26 +35,31 @@ export function BetComponent({ value }: Props) {
         }}
       >
         <Dice value={value} />
+        {isOver && <Confetti />}
       </main>
 
       <footer
         sx={{
           width: "100%",
-          height: 40,
+          height: 90,
         }}
       >
-        <button
-          sx={{ variant: "button.secondary", mt: "auto" }}
-          onClick={() => bet("less")}
-        >
-          Less
-        </button>
-        <button
-          sx={{ variant: "button.primary", mt: "auto", ml: 2 }}
-          onClick={() => bet("more")}
-        >
-          More
-        </button>
+        {!isOver && (
+          <React.Fragment>
+            <button
+              sx={{ variant: "button.secondary", mt: "auto" }}
+              onClick={() => bet("less")}
+            >
+              Less
+            </button>
+            <button
+              sx={{ variant: "button.primary", mt: "auto", ml: 2 }}
+              onClick={() => bet("more")}
+            >
+              More
+            </button>
+          </React.Fragment>
+        )}
       </footer>
     </React.Fragment>
   )

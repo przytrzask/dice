@@ -43,7 +43,7 @@ export function Drawing() {
       <footer
         sx={{
           width: "100%",
-          height: 40,
+          height: 90,
         }}
       ></footer>
     </React.Fragment>
