@@ -2,7 +2,7 @@ import create, { StateCreator } from "zustand"
 import { LOCALSTORAGE_KEY } from "../../constants"
 import { State, Bet } from "./types"
 
-const ROUNDS = 3
+const ROUNDS = 30
 
 const saveToLocalstorage = <T extends State>(
   config: StateCreator<T, (fn: (draft: T) => void) => void>
